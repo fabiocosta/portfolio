@@ -8,6 +8,13 @@ import images from '../../constants/images';
 
 import './About.scss';
 
+// const abouts = [
+//   { title: 'Frontend', description: 'Abilities to build a awesome and modern apps with frontend knowledges', imgUrl: images.about01 },
+//   { title: 'Backend', description: 'Abilities to build a awesome and modern apps with backend knowledges', imgUrl: images.about02 },
+//   { title: 'Good coding practices', description: 'Abilities to build a awesome and modern apps with frontend knowledges', imgUrl: images.about03 },
+//   { title: 'MERN Stack', description: 'Abilities to build a awesome and modern with the high technologies of the moment: MongoDB, ExpressJs, React, NodeJs ', imgUrl: images.about04 },
+// ];
+
 const About = () => {
   const [abouts, setAbouts] = useState([]);
 
@@ -31,7 +38,7 @@ const About = () => {
             className="app__profile-item"
             key={about.title + index}
           >
-            <img src={about.imgUrl} alt={about.title} />
+            <img src={urlFor(about.imgUrl)} alt={about.title} />
             <h2 className="bold-text" style={{ marginTop: 20 }}>{about.title}</h2>
             <p className="p-text" style={{ marginTop: 10 }}>{about.description}</p>
           </motion.div>
