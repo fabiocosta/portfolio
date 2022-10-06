@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
-import { AnimatePresence, motion } from 'framer-motion/dist/framer-motion';
+import { motion } from 'framer-motion/dist/framer-motion';
 
 import { AppWrap } from '../../wrapper';
 
 import { urlFor, client } from '../../client';
 
 import './Work.scss';
-import { FaAssistiveListeningSystems } from 'react-icons/fa';
 
 const Work = () => {
   const [works, setWorks] = useState([]);
@@ -36,6 +35,8 @@ const Work = () => {
       }else {
         setFilterWork(works.filter((work) => work.tags.includes(item)));
       }
+      console.log(works)
+
     }, 500);
   };
 
@@ -47,10 +48,10 @@ const Work = () => {
         {['UI/UX', 'Web App', 'Mobile App', 'React JS', 'All'].map((item, index) => (
           <div
             key={index}
-            onclick={() => handleWorkFilter(item)}
+            onClick={() => handleWorkFilter(item)}
             className={`app__work-filter-item app__flex p-text ${activeFilter === item ? 'item-active' : ''}`}
           >
-            {item}
+            { item }
           </div>
         ))}
       </div>
